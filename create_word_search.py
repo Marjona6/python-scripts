@@ -126,9 +126,9 @@ if __name__ == "__main__":
         if not failed_words:
             break
     puzzle_text = generate_puzzle_text(best_grid, space_between_letters)
-    os.makedirs("puzzles/clean", exist_ok=True)
+    os.makedirs("output/clean", exist_ok=True)
     filename_safe = puzzle_name.strip().replace(' ', '_').lower() or "puzzle_output"
-    filename = f"puzzles/clean/puzzle_{filename_safe}.txt"
+    filename = f"output/clean/puzzle_{filename_safe}.txt"
     word_list_text = "\n\nWords to find:\n" + ", ".join(best_placed)
     if best_failed:
         warning_text = f"\n\nWARNING: {len(best_failed)} word(s) could not be placed due to space constraints:\n" + ", ".join(best_failed)
